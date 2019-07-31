@@ -53,6 +53,8 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
 
