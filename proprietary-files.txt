@@ -64,7 +64,6 @@ lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
 
 # Camera
-lib/libMiCameraHal.so:vendor/lib/libMiCameraHal.so
 vendor/lib/hw/camera.msm8998.so
 vendor/lib/lib_lowlight.so
 vendor/lib/lib_lowlight_dxo.so
@@ -82,6 +81,7 @@ vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmibokeh_835.so
+vendor/lib/libMiCameraHal.so
 vendor/lib/libmm-qcamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
@@ -152,7 +152,7 @@ vendor/lib/libXMFD_AgeGender.so
 vendor/lib/libSonyIMX386PdafLibrary.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
+vendor/firmware/cpp_firmware_v1_12_0.fw
 
 # Camera ISP
 vendor/lib/libmmcamera_isp_abf48.so
@@ -187,6 +187,7 @@ vendor/lib/libmmcamera_isp_hdr_bhist_stats44.so
 vendor/lib/libmmcamera_isp_ihist_stats46.so
 vendor/lib/libmmcamera_isp_linearization40.so
 vendor/lib/libmmcamera_isp_ltm47.so
+vendor/lib/libmmcamera_isp_luma_adaptation40.so
 vendor/lib/libmmcamera_isp_mce40.so
 vendor/lib/libmmcamera_isp_mesh_rolloff44.so
 vendor/lib/libmmcamera_isp_pdaf48.so
@@ -230,6 +231,19 @@ vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 
 # DPM
+bin/dpmd
+etc/dpm/dpm.conf
+etc/init/dpmd.rc
+etc/permissions/com.qti.dpmframework.xml
+etc/permissions/dpmapi.xml
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+lib64/com.qualcomm.qti.dpm.api@1.0.so
+lib64/libdpmctmgr.so
+lib64/libdpmfdmgr.so
+lib64/libdpmframework.so
+lib64/libdpmtcm.so
+-priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
@@ -279,8 +293,6 @@ vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_ds_api.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
@@ -364,7 +376,7 @@ lib64/vendor.qti.hardware.radio.ims@1.0.so:vendor/lib64/vendor.qti.hardware.radi
 lib64/vendor.qti.ims.callinfo@1.0.so:vendor/lib64/vendor.qti.ims.callinfo@1.0.so
 lib64/vendor.qti.ims.rcsconfig@1.0.so:vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
--priv-app/ims/ims.apk|d7fc9fc0097d6b68b7d0f2ce7e1e194ed8116d2f
+-priv-app/ims/ims.apk|71b2daa01887c75301f8b73ad47317c29392d383
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -438,7 +450,7 @@ vendor/lib64/libmt@1.2.so
 vendor/lib64/libtida@1.1.so
 
 # NFC firmware
-vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
+vendor/lib/libpn553_fw.so
 
 # Perf
 lib/vendor.qti.hardware.perf@1.0.so:vendor/lib/vendor.qti.hardware.perf@1.0.so
