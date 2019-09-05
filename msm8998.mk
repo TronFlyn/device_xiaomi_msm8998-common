@@ -368,6 +368,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# Soter
+PRODUCT_PACKAGES += \
+	soter
+
+PRODUCT_BOOT_JARS += \
+	soter
+
 # Wifi
 PRODUCT_PACKAGES += \
     ipacm \
