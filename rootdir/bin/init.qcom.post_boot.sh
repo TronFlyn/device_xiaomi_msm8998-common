@@ -141,3 +141,25 @@ chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
 chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
 chmod 444 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 chmod 444 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+
+#optimize CPU cores
+echo 0 > /proc/sys/kernel/sched_upmigrate
+echo 0 > /proc/sys/kernel/sched_downmigrate
+echo 10 > /proc/sys/kernel/sched_spill_nr_run
+echo 85 > /proc/sys/kernel/sched_spill_load
+
+chmod 644 /dev/cpuset/background/cpus
+echo 0-1 > /dev/cpuset/background/cpus
+chmod 644 /dev/cpuset/foreground/cpus
+echo 2-7 > /dev/cpuset/foreground/cpus
+chmod 644 /dev/cpuset/top-app/cpus
+echo 4-7 > /dev/cpuset/top-app/cpus
+chmod 644 /dev/cpuset/system-background/cpus
+echo 0-3 > /dev/cpuset/system-background/cpus
+chmod 644 /dev/cpuset/camera-daemon/cpus
+echo 0-3 > /dev/cpuset/camera-daemon/cpus
+
+#msm_thermal
+echo 0 > /sys/module/msm_thermal/core_control/enabled
+echo 0 > /sys/module/msm_thermal/vdd_restriction/enabled
+echo 0 > /sys/module/msm_thermal/parameters/enabled
