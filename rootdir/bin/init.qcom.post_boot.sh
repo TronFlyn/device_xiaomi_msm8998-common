@@ -56,102 +56,61 @@ echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 
 setprop vendor.post_boot.parsed 1
 
-sleep 30s
+sleep 10s
 #set cpu and gpu
-chmod 777 /sys/bus/cpu/devices/cpu0/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu0/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu0/cpufreq/scaling_governor
 echo "1900800" > /sys/bus/cpu/devices/cpu0/cpufreq/scaling_max_freq
 echo "1478400" > /sys/bus/cpu/devices/cpu0/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu0/online
 echo "1" > /sys/bus/cpu/devices/cpu0/online
 chmod 444 /sys/bus/cpu/devices/cpu0/online
 
-chmod 777 /sys/bus/cpu/devices/cpu1/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu1/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu1/cpufreq/scaling_governor
 echo "1900800" > /sys/bus/cpu/devices/cpu1/cpufreq/scaling_max_freq
 echo "1478400" > /sys/bus/cpu/devices/cpu1/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu1/online
 echo "1" > /sys/bus/cpu/devices/cpu1/online
 chmod 444 /sys/bus/cpu/devices/cpu1/online
 
-chmod 777 /sys/bus/cpu/devices/cpu2/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu2/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu2/cpufreq/scaling_governor
 echo "1900800" > /sys/bus/cpu/devices/cpu2/cpufreq/scaling_max_freq
 echo "1478400" > /sys/bus/cpu/devices/cpu2/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu2/online
 echo "1" > /sys/bus/cpu/devices/cpu2/online
 chmod 444 /sys/bus/cpu/devices/cpu2/online
 
-chmod 777 /sys/bus/cpu/devices/cpu3/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu3/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu3/cpufreq/scaling_governor
 echo "1900800" > /sys/bus/cpu/devices/cpu3/cpufreq/scaling_max_freq
 echo "1478400" > /sys/bus/cpu/devices/cpu3/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu3/online
 echo "1" > /sys/bus/cpu/devices/cpu3/online
 chmod 444 /sys/bus/cpu/devices/cpu3/online
 
-chmod 777 /sys/bus/cpu/devices/cpu4/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu4/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu4/cpufreq/scaling_governor
 echo "2457600" > /sys/bus/cpu/devices/cpu4/cpufreq/scaling_max_freq
 echo "1497600" > /sys/bus/cpu/devices/cpu4/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu4/online
 echo "1" > /sys/bus/cpu/devices/cpu4/online
 chmod 444 /sys/bus/cpu/devices/cpu4/online
 
-chmod 777 /sys/bus/cpu/devices/cpu5/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu5/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu5/cpufreq/scaling_governor
 echo "2457600" > /sys/bus/cpu/devices/cpu5/cpufreq/scaling_max_freq
 echo "1497600" > /sys/bus/cpu/devices/cpu5/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu5/online
 echo "1" > /sys/bus/cpu/devices/cpu5/online
 chmod 444 /sys/bus/cpu/devices/cpu5/online
 
-chmod 777 /sys/bus/cpu/devices/cpu6/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu6/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu6/cpufreq/scaling_governor
 echo "2457600" > /sys/bus/cpu/devices/cpu6/cpufreq/scaling_max_freq
 echo "1497600" > /sys/bus/cpu/devices/cpu6/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu6/online
 echo "1" > /sys/bus/cpu/devices/cpu6/online
 chmod 444 /sys/bus/cpu/devices/cpu6/online
 
-chmod 777 /sys/bus/cpu/devices/cpu7/cpufreq/scaling_governor
-echo "interactive" > /sys/bus/cpu/devices/cpu7/cpufreq/scaling_governor
-chmod 444 /sys/bus/cpu/devices/cpu7/cpufreq/scaling_governor
 echo "2457600" > /sys/bus/cpu/devices/cpu7/cpufreq/scaling_max_freq
 echo "1497600" > /sys/bus/cpu/devices/cpu7/cpufreq/scaling_min_freq
 chmod 644 /sys/bus/cpu/devices/cpu7/online
 echo "1" > /sys/bus/cpu/devices/cpu7/online
 chmod 444 /sys/bus/cpu/devices/cpu7/online
 
-echo 710000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
-echo 257000000 > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-echo 710000000 > /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-echo msm-adreno-tz > /sys/class/kgsl/kgsl-3d0/devfreq/governor
-echo "3" > /sys/class/kgsl/kgsl-3d0/min_pwrlevel
-echo "0" > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-chmod 444 /sys/class/kgsl/kgsl-3d0/max_gpuclk
-chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-chmod 444 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
-chmod 444 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-
 #optimize CPU cores
-echo 0 > /proc/sys/kernel/sched_upmigrate
-echo 0 > /proc/sys/kernel/sched_downmigrate
-echo 10 > /proc/sys/kernel/sched_spill_nr_run
-echo 85 > /proc/sys/kernel/sched_spill_load
-
 chmod 644 /dev/cpuset/background/cpus
 echo 0-1 > /dev/cpuset/background/cpus
 chmod 644 /dev/cpuset/foreground/cpus
-echo 2-7 > /dev/cpuset/foreground/cpus
+echo 4-7 > /dev/cpuset/foreground/cpus
 chmod 644 /dev/cpuset/top-app/cpus
 echo 4-7 > /dev/cpuset/top-app/cpus
 chmod 644 /dev/cpuset/system-background/cpus
