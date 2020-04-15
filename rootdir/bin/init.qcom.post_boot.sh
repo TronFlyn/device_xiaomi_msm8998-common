@@ -73,3 +73,17 @@ echo 0-3 > /dev/cpuset/camera-daemon/cpus
 echo 0 > /sys/module/msm_thermal/core_control/enabled
 echo 0 > /sys/module/msm_thermal/vdd_restriction/enabled
 echo 0 > /sys/module/msm_thermal/parameters/enabled
+
+#stune boost
+chmod 644 /dev/stune/background/schedtune.boost
+echo -20 > /dev/stune/background/schedtune.boost
+echo 0 > /dev/stune/background/schedtune.prefer_idle
+chmod 644 /dev/stune/foreground/schedtune.boost
+echo 0 > /dev/stune/foreground/schedtune.boost
+echo 0 > /dev/stune/foreground/schedtune.prefer_idle
+chmod 644 /dev/stune/top-app/schedtune.boost
+echo 20 > /dev/stune/top-app/schedtune.boost
+echo 0 > /dev/stune/top-app/schedtune.prefer_idle
+chmod 644 /dev/stune/top-app/schedtune.boost
+echo 0 > /dev/stune/top-app/schedtune.boost
+echo 0 > /dev/stune/rt/schedtune.prefer_idle
