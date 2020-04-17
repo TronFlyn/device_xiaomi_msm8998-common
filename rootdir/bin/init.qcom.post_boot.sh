@@ -57,6 +57,14 @@ echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 setprop vendor.post_boot.parsed 1
 
 sleep 10s
+#GPU
+echo 710000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
+echo 710000000 > /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+echo "0" > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+chmod 444 /sys/class/kgsl/kgsl-3d0/max_gpuclk
+chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+chmod 444 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+
 #optimize CPU cores
 chmod 644 /dev/cpuset/background/cpus
 echo 0-1 > /dev/cpuset/background/cpus
@@ -84,6 +92,3 @@ echo 0 > /dev/stune/foreground/schedtune.prefer_idle
 chmod 644 /dev/stune/top-app/schedtune.boost
 echo 20 > /dev/stune/top-app/schedtune.boost
 echo 0 > /dev/stune/top-app/schedtune.prefer_idle
-chmod 644 /dev/stune/top-app/schedtune.boost
-echo 0 > /dev/stune/top-app/schedtune.boost
-echo 0 > /dev/stune/rt/schedtune.prefer_idle
