@@ -69,9 +69,9 @@ chmod 444 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
 chmod 644 /dev/cpuset/background/cpus
 echo 0-1 > /dev/cpuset/background/cpus
 chmod 644 /dev/cpuset/foreground/cpus
-echo 4-7 > /dev/cpuset/foreground/cpus
+echo 0-7 > /dev/cpuset/foreground/cpus
 chmod 644 /dev/cpuset/top-app/cpus
-echo 4-7 > /dev/cpuset/top-app/cpus
+echo 0-7 > /dev/cpuset/top-app/cpus
 chmod 644 /dev/cpuset/system-background/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
 chmod 644 /dev/cpuset/camera-daemon/cpus
@@ -94,8 +94,6 @@ echo 20 > /dev/stune/top-app/schedtune.boost
 echo 0 > /dev/stune/top-app/schedtune.prefer_idle
 
 #enforce QC charge
-echo '150' >/sys/class/power_supply/bms/temp_cool
-echo '500' >/sys/class/power_supply/bms/temp_warm
 chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
 echo `expr 3000 * 1000` > /sys/class/power_supply/battery/constant_charge_current_max
 chmod 755 /sys/class/power_supply/battery/input_current_max
