@@ -65,18 +65,6 @@ chmod 444 /sys/class/kgsl/kgsl-3d0/max_gpuclk
 chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
 chmod 444 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
 
-#optimize CPU cores
-chmod 644 /dev/cpuset/background/cpus
-echo 0-1 > /dev/cpuset/background/cpus
-chmod 644 /dev/cpuset/foreground/cpus
-echo 4-7 > /dev/cpuset/foreground/cpus
-chmod 644 /dev/cpuset/top-app/cpus
-echo 4-7 > /dev/cpuset/top-app/cpus
-chmod 644 /dev/cpuset/system-background/cpus
-echo 0-3 > /dev/cpuset/system-background/cpus
-chmod 644 /dev/cpuset/camera-daemon/cpus
-echo 0-3 > /dev/cpuset/camera-daemon/cpus
-
 #msm_thermal
 echo 0 > /sys/module/msm_thermal/core_control/enabled
 echo 0 > /sys/module/msm_thermal/vdd_restriction/enabled
