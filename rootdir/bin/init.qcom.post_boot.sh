@@ -82,8 +82,6 @@ echo 20 > /dev/stune/top-app/schedtune.boost
 echo 0 > /dev/stune/top-app/schedtune.prefer_idle
 
 #enforce QC charge
-echo '150' >/sys/class/power_supply/bms/temp_cool
-echo '500' >/sys/class/power_supply/bms/temp_warm
 chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
 echo `expr 3000 * 1000` > /sys/class/power_supply/battery/constant_charge_current_max
 chmod 755 /sys/class/power_supply/battery/input_current_max
