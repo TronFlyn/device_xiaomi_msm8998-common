@@ -80,14 +80,3 @@ echo 0 > /dev/stune/foreground/schedtune.prefer_idle
 chmod 644 /dev/stune/top-app/schedtune.boost
 echo 20 > /dev/stune/top-app/schedtune.boost
 echo 0 > /dev/stune/top-app/schedtune.prefer_idle
-
-#enforce QC charge
-chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
-echo `expr 3000 * 1000` > /sys/class/power_supply/battery/constant_charge_current_max
-chmod 755 /sys/class/power_supply/battery/input_current_max
-echo `expr 3000 * 1000` > /sys/class/power_supply/battery/input_current_max
-echo 3000 > /sys/module/dwc3_msm/parameters/dcp_max_current
-echo 3000 > /sys/module/dwc3_msm/parameters/hvdcp_max_current
-echo 3000 > /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma
-echo 3000 > /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma
-echo 3000 > /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma
