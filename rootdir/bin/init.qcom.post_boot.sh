@@ -57,14 +57,6 @@ echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 setprop vendor.post_boot.parsed 1
 
 sleep 10s
-#GPU
-echo 710000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
-echo 710000000 > /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-echo "0" > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-chmod 444 /sys/class/kgsl/kgsl-3d0/max_gpuclk
-chmod 444 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-chmod 444 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-
 #msm_thermal
 echo 0 > /sys/module/msm_thermal/core_control/enabled
 echo 0 > /sys/module/msm_thermal/vdd_restriction/enabled
